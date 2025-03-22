@@ -41,17 +41,9 @@ function Header() {
         <div className="relative ml-auto" ref={dropdownRef}>
           <button
             onClick={() => setShowDropdown(!showDropdown)}
-            className="w-10 h-10 rounded-full bg-primaryGreen text-white flex items-center justify-center text-lg font-semibold overflow-hidden"
+            className="w-10 h-10 rounded-full bg-primaryGreen text-white flex items-center justify-center text-lg font-semibold"
           >
-            {profile.name === 'Dizzpy' ? (
-              <img
-                src="https://avatars.githubusercontent.com/u/28524634?v=4"
-                alt="Dizzpy"
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              getInitials(profile.name)
-            )}
+            {getInitials(profile.name)}
           </button>
 
           {showDropdown && (

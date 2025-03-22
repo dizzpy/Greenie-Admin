@@ -23,7 +23,7 @@ function Sidebar() {
   }
 
   function toggleShop() {
-    setIsShopOpen(!isShopOpen);
+    setIsShopOpen((prev) => !prev);
   }
 
   return (
@@ -65,11 +65,12 @@ function Sidebar() {
               </Link>
             </li>
             <li className="mb-2 flex items-center mt-6">
-              <Link to="/post" className="flex items-center space-x-2">
+              <Link to="/post/post-management" className="flex items-center space-x-2">
                 <StickyNote className="mr-2" size={20} />
                 <span className="text-lg">Post Management</span>
               </Link>
             </li>
+       
             <li className="mb-2 flex items-center mt-6">
               <Link to="/badges" className="flex items-center space-x-2">
                 <Trophy className="mr-2" size={20} />
@@ -91,7 +92,7 @@ function Sidebar() {
               <li className="mb-2 flex pl-8 items-center mt-3">
                 <Link to="/products" className="flex items-center space-x-2">
                   <ArrowRight className="mr-2" size={20} />
-                  <span className="text-base">Product</span>
+                  <span className="text-base">Products</span>
                 </Link>
               </li>
               <li className="mb-2 flex pl-8 items-center mt-3">
