@@ -130,44 +130,23 @@ function ReviewChallenges() {
         Review Challenge
       </h2>
 
-      {/* Image URL Input */}
+      {/* Image Preview Only */}
       <div className="mb-4 mt-4">
         <label className="block text-gray-700 font-medium mb-2">
-          Upload an Image <span className="text-red-500">*</span>
+          Challenge Image<span className="text-red">*</span>
         </label>
-        <input
-          type="text"
-          name="photoUrl"
-          className="w-full border border-gray-300 p-2 text-center h-32 rounded"
-          placeholder="Paste image URL here"
-          value={formData.photoUrl}
-          onChange={handleChange}
-        />
-        {formData.photoUrl && (
-          <div className="mt-4">
+        <div className="border-2 h-full p-6 flex flex-col items-center justify-center rounded-lg">
+          {formData.photoUrl ? (
             <img
               src={formData.photoUrl}
-              alt="Preview"
-              className="w-full h-32 object-cover rounded-lg"
+              alt="Challenge Preview"
+              className="w-full h-full object-cover rounded-lg"
             />
-          </div>
-        )}
+          ) : (
+            <p className="text-gray-500 text-sm">Image preview will appear here</p>
+          )}
+        </div>
       </div>
-
-      {/* Added By */}
-      {/* <div className="mb-4">
-        <label className="block text-gray-700 font-medium mb-1">
-          Added By <span className="text-red">*</span>
-        </label>
-        <input
-          type="text"
-          name="addedBy"
-          value={formData.addedBy}
-          onChange={handleChange}
-          placeholder="Enter your name"
-          className="border border-gray-300 p-3 w-full rounded-md"
-        />
-      </div> */}
 
       {/* Challenge Name */}
       <div className="mb-4 mt-4">
