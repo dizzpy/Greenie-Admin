@@ -16,8 +16,8 @@ function ActiveCard({ challenge }) {
 
       {/* Text Section */}
       <div className="mt-4 md:mt-0 md:ml-4 flex-grow">
-        <h3 className="text-lg text-textGray font-semibold">{challenge.name}</h3>
-        <p className="text-sm text-textGray mt-1">Added by: {challenge.addedBy}</p>
+        <h3 className="text-lg text-textGray font-semibold">{challenge.challengeName}</h3>
+        <p className="text-sm text-textGray mt-1">Added by: {challenge.submitter}</p>
         <p className="text-sm text-textGray mt-1">Points: {challenge.points}</p>
         <p className="text-sm text-textGray mt-1">Submissions: {challenge.submissions}</p>
       </div>
@@ -25,12 +25,12 @@ function ActiveCard({ challenge }) {
   );
 }
 
-// Add PropTypes validation for the props
+// ✅ Updated PropTypes with correct keys
 ActiveCard.propTypes = {
   challenge: PropTypes.shape({
     photoUrl: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    addedBy: PropTypes.string.isRequired,
+    challengeName: PropTypes.string.isRequired,
+    submitter: PropTypes.string.isRequired,
     points: PropTypes.number.isRequired,
     submissions: PropTypes.number.isRequired,
   }).isRequired,

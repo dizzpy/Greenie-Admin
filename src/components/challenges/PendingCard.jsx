@@ -16,7 +16,7 @@ function PendingCard({ challenge }) {
 
       {/* Text Section */}
       <div className="mt-4 md:mt-0 md:ml-4 flex-grow">
-        <h3 className="text-lg text-textGray font-semibold">{challenge.name}</h3>
+        <h3 className="text-lg text-textGray font-semibold">{challenge.challengeName}</h3>
         <p className="text-sm text-textGray mt-1">Added by: {challenge.addedBy}</p>
         <p className="text-sm text-textGray mt-1">Points: {challenge.points}</p>
         <p className="text-sm text-red mt-1">Need to Review: {challenge.submissions}</p>
@@ -29,7 +29,7 @@ function PendingCard({ challenge }) {
 PendingCard.propTypes = {
   challenge: PropTypes.shape({
     photoUrl: PropTypes.string,
-    name: PropTypes.string.isRequired,
+    challengeName: PropTypes.string.isRequired,
     addedBy: PropTypes.string.isRequired,
     points: PropTypes.number.isRequired,
     submissions: PropTypes.number.isRequired,
